@@ -2,10 +2,12 @@ import * as React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import Produtos from '../../component/produtos/index';
+import { useNavigation } from '@react-navigation/native';
 export interface HomeScreenProps {
 
 }
 export function HomeScreen(props: any) {
+    const navegation = useNavigation();
     return (
         <View style={style.container}>
             <View style={style.top}>
@@ -27,12 +29,12 @@ export function HomeScreen(props: any) {
             <ScrollView>
                 <Text style={style.text}>Mais Clicados</Text>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-                    <Produtos img={require('../../../assets/img/images.jpg')} cost="R$4000,00" onclick={()=>alert('CLICOU')}>Picolé de coxinha</Produtos>
-                    <Produtos img={require('../../../assets/img/refri1.jpg')} cost="R$4000,00" onclick={()=> alert('CLICOU')}>Refrigerante</Produtos>
+                    <Produtos img={require('../../../assets/img/imagem.jpg')} cost="R$4000,00" onClick={() => navegation.navigate("detalhes")}>Picolé de coxinha</Produtos>
+                    <Produtos img={require('../../../assets/img/refri1.jpg')} cost="R$4000,00" onClick={() => navegation.navigate("detalhes")}>Refrigerante</Produtos>
                 </View>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-around' }}>
-                    <Produtos img={require('../../../assets/img/imagem3.jpg')} cost="R$4000,00"onclick={()=> alert('CLICOU')}>Cerveja</Produtos>
-                    <Produtos img={require('../../../assets/img/trufa.jpg')} cost="R$4000,00" onclick={()=> alert('CLICOU')}>Trufa de chocolate</Produtos>
+                    <Produtos img={require('../../../assets/img/imagem3.jpg')} cost="R$4000,00" onClick={() => navegation.navigate("detalhes")}>Cerveja</Produtos>
+                    <Produtos img={require('../../../assets/img/trufa.jpg')} cost="R$4000,00" onClick={() => navegation.navigate("detalhes")}>Trufa de chocolate</Produtos>
                 </View>
             </ScrollView>
 

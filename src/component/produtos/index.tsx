@@ -6,18 +6,10 @@ export interface ProdutosProps {
 
 export default function Produto(props: any) {
 
-    function tamanhoLetra(desc:any){
-        if(desc.legth<27){
-            return desc;
-        }
-        return desc.substring(0,23);
-    }
-
     return (
         <TouchableOpacity style={styles.container} onPress={props.onClick}>
             <Image source={props.img} style={styles.produtoImg} />
-            <Text style={styles.produtoText}>
-              {tamanhoLetra(props.children)}
+            <Text style={styles.produtoText}> {(props.children)}
             </Text>
             <View>
                 <Text style={styles.produtoText}>{props.cost}</Text>

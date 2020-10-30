@@ -12,18 +12,22 @@ export default function LoginScreen(props: LoginProps) {
 
     const nav = useNavigation();
     const [erro, setErro] = useState("");
+    const [modalAberto, setModalAberto] = useState(false);
 
     const logar = async (dados: any) => {
-        console.clear();
-        setErro("");
         await new Promise(resolve => setTimeout(resolve, 2000));
 
-        if (dados.email == 'teste@teste.com' && dados.senha == '123456')
-            nav.navigate("app", { params: { email: dados.email } });
-        else
-            setErro('Email ou senha incorreta')
-    }
+        if (dados.email == 'teste@teste.com' && dados.senha == '123456') {
+            nav.navigate('app');
+        } else {
+            if (Platform.OS == "android")
+                ToastAndroid.show("Email ou senha incorreta", 3000);
+            else
+                //Alert.alert('Erro', 'Email ou senha incorreta');
+                setErro("Email ou senha incorreta");
 
+        }
+    }
     return (<ImageBackground source={require('./../../../assets/img/background.png')}
         style={styles.background}>
         <StatusBar style="light" />
