@@ -11,7 +11,6 @@ export function HomeScreen(props: any) {
     return (
         <View style={style.container}>
             <View style={style.top}>
-                <Image source={require('./../../../assets/img/logo.png')} style={style.imagem} />
                 <View style={style.textContainer}>
                     <Text style={style.text}>Comidas</Text>
                     <Text style={style.text}>-</Text>
@@ -51,9 +50,6 @@ const style = StyleSheet.create({
     },
     top: {
         marginBottom: 8
-    },
-    imagem: {
-        width: '100%'
     },
     textContainer: {
         flexDirection: "row",

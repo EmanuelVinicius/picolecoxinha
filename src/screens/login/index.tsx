@@ -22,8 +22,7 @@ export default function LoginScreen(props: LoginProps) {
         } else {
             if (Platform.OS == "android")
                 ToastAndroid.show("Email ou senha incorreta", 3000);
-            else
-                //Alert.alert('Erro', 'Email ou senha incorreta');
+            else            
                 setErro("Email ou senha incorreta");
 
         }
