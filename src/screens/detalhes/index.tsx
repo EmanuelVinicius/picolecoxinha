@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, Text, Image, ScrollView, TouchableOpacity, StyleSheet, Alert } from "react-native";
 import { Button } from "react-native-elements";
-import Footer from "../../component/Footer";
+import Footer from "../../components/Footer";
 export function DetailScreen() {
 
   const comprar = () => {

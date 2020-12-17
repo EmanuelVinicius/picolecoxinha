@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "442388847200",
+    "firebase_url": "https://picolecoxinha-default-rtdb.firebaseio.com",
+    "project_id": "picolecoxinha",
+    "storage_bucket": "picolecoxinha.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:442388847200:android:3b358bebd1b83753f4c105",
+        "android_client_info": {
+          "package_name": "br.com.emanuel.reactnative"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "442388847200-43btard0h0jedsci796nlqnsseljkim7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCv8WbzSLD3lhLdaWIHCCemUaEnbXMqCg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "442388847200-43btard0h0jedsci796nlqnsseljkim7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

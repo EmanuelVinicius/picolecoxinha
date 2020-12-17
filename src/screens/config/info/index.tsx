@@ -16,7 +16,7 @@ export function ConfigInfoScreen(props: any) {
       <Image source={require("../../../../assets/img/logo.png")} style={stlye.Img} />
       <Text style={stlye.text}>
         A GostosinhoFood é uma ideia que surgiu no 2 semestre de 2020, com a
-        itenção de vender Picolé de Coxinha,uma ideia inovadora para o ramo
+        intenção de vender Picolé de Coxinha,uma ideia inovadora para o ramo
         alimenticio.
       </Text>
       <Button title="Compartilhe"  onPress={recursoNativo} style={stlye.btnContainer}/>

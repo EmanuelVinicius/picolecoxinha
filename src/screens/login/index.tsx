@@ -4,7 +4,9 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, Input } from 'react-native-elements';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import firebase from 'firebase';
 import { NavigationContainer, useNavigation, useRoute } from '@react-navigation/native';
+import { AdMobBanner } from 'expo-ads-admob';
 
 export interface LoginProps { }
 
@@ -14,18 +16,19 @@ export default function LoginScreen(props: LoginProps) {
     const [erro, setErro] = useState("");
     const [modalAberto, setModalAberto] = useState(false);
 
-    const logar = async (dados: any) => {
-        await new Promise(resolve => setTimeout(resolve, 2000));
-
-        if (dados.email == 'teste@teste.com' && dados.senha == '123456') {
-            nav.navigate('app');
-        } else {
-            if (Platform.OS == "android")
-                ToastAndroid.show("Email ou senha incorreta", 3000);
-            else            
-                setErro("Email ou senha incorreta");
-
-        }
+    const logar = async (dados: { email: string; senha: string; }) => {
+        setErro(""); //Limpa o erro
+        //Realiza autenticação
+        await firebase.auth().signInWithEmailAndPassword(dados.email, dados.senha)
+            .then(() => nav.navigate('app'))
+            .catch((erro) => {
+                console.log(erro);
+                if (Platform.OS == "android")
+                    ToastAndroid.show("Email ou senha incorreta", 3000);
+                else
+                    //Alert.alert('Erro', 'Email ou senha incorreta');
+                    setErro("Email ou senha incorreta");
+            })
     }
     return (<ImageBackground source={require('./../../../assets/img/background.png')}
         style={styles.background}>
@@ -56,6 +59,12 @@ export default function LoginScreen(props: LoginProps) {
                         <TouchableOpacity onPress={() => nav.navigate("cadastrar")}>
                             <Text style={styles.cadastrar}>Não possui conta? Clique aqui para se cadastrar!!!</Text>
                         </TouchableOpacity>
+
+                        <AdMobBanner
+                            bannerSize="mediumRectangle"
+                            adUnitID="ca-app-pub-8890411738087560/1818681309"
+                        />
+
                     </View>
                 )}
             </Formik>

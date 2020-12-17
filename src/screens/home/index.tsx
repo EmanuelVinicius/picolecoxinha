@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
-import Produtos from '../../component/produtos/index';
+import Produtos from '../../components/produtos/index';
 import { useNavigation } from '@react-navigation/native';
+import { AdMobBanner } from 'expo-ads-admob';
 export interface HomeScreenProps {
 
 }
@@ -36,6 +37,11 @@ export function HomeScreen(props: any) {
                     <Produtos img={require('../../../assets/img/trufa.jpg')} cost="R$4000,00" onClick={() => navegation.navigate("detalhes")}>Trufa de chocolate</Produtos>
                 </View>
             </ScrollView>
+
+            <AdMobBanner
+                bannerSize="mediumRectangle"
+                adUnitID="ca-app-pub-8890411738087560/1818681309"
+            />
 
         </View>
 
