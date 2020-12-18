@@ -10,7 +10,7 @@ export interface HomeScreenProps {
 export function HomeScreen(props: any) {
     const navegation = useNavigation();
     return (
-        <View style={style.container}>
+        <ScrollView style={style.container}>
             <View style={style.top}>
                 <View style={style.textContainer}>
                     <Text style={style.text}>Comidas</Text>
@@ -37,13 +37,7 @@ export function HomeScreen(props: any) {
                     <Produtos img={require('../../../assets/img/trufa.jpg')} cost="R$4000,00" onClick={() => navegation.navigate("detalhes")}>Trufa de chocolate</Produtos>
                 </View>
             </ScrollView>
-
-            <AdMobBanner
-                bannerSize="mediumRectangle"
-                adUnitID="ca-app-pub-8890411738087560/1818681309"
-            />
-
-        </View>
+        </ScrollView>
 
     );
 }

@@ -21,18 +21,18 @@ export function DetailScreen() {
         style={styles.imagemProduto}
         resizeMode="cover"
       />
-      <View>
+      <ScrollView>
         <Text style={[styles.titulo, { fontSize: 15 }]}>R$ 4000,00</Text>
-      </View>
-      <View>
+      </ScrollView>
+      <ScrollView>
         <Text style={[styles.titulo, { fontSize: 30 }]}>Picolé de Coxinha</Text>
-      </View>
-      <View>
+      </ScrollView>
+      <ScrollView>
         <Text style={styles.textoView}>
           Picolé de coxinha é a mais nova sensação de 2020, uma delicia em
           formato de picolé.
         </Text>
-      </View>
+      </ScrollView>
       <Button title="COMPRAR" onPress={comprar} style={styles.btnContainer} />
       <View style={styles.linha} />
       <Footer />

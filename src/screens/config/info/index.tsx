@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Button } from 'react-native-elements';
-import { View, Text, StyleSheet, Image, Share } from "react-native";
+import { View, Text, StyleSheet, Image, Share,ScrollView } from "react-native";
 
 export interface ConfigInfoScreenProps { }
 const recursoNativo = () => {
@@ -8,7 +8,7 @@ const recursoNativo = () => {
 }
 export function ConfigInfoScreen(props: any) {
   return (
-    <View style={stlye.container}>
+    <ScrollView style={stlye.container}>
       <Image source={require("../../../../assets/img/Eu.jpg")} style={stlye.Img} />
       <Text style={stlye.text}>
         Este app foi feito por Emanuel Vinícius Rocha da Silva...
@@ -20,7 +20,7 @@ export function ConfigInfoScreen(props: any) {
         alimenticio.
       </Text>
       <Button title="Compartilhe"  onPress={recursoNativo} style={stlye.btnContainer}/>
-    </View>
+    </ScrollView>
   );  
 }
 
